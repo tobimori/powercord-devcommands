@@ -40,7 +40,10 @@ module.exports = {
         e.forks_count && !facts[2] && facts.push(`:fork_and_knife: ${e.forks_count} Forks`)
 
         items += `[**${e.full_name}**](${e.html_url})\n`
-        e.description && (items += `*${e.description}*\n`)
+
+        e.description.length >= 200 && (e.description = e.description.substring(0, 200) + '...')
+        e.description && (items += `*${e.description.trim()}*\n`)
+
         items += `${facts.join(' — ')}\n\n`
       })
 

@@ -41,7 +41,10 @@ module.exports = {
         e.package.keywords && (keywords = e.package.keywords.map((k) => `[#${k}](https://www.npmjs.com/search?q=keywords:${k})`))
 
         items += `[**${e.package.name}**](${e.package.links.npm})\n`
-        e.package.description && (items += `*${e.package.description}*\n`)
+
+        e.package.description.length >= 200 && (e.package.description = e.package.description.substring(0, 200) + '...')
+        e.package.description && (items += `*${e.package.description.trim()}*\n`)
+
         keywords.length && (items += `${keywords.join(' ')}\n`)
         items += `${facts.join(' — ')}\n\n`
       })
