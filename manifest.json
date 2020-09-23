@@ -1,7 +1,7 @@
 {
   "name": "DevCommands",
-  "version": "0.1.1",
-  "description": "Commands for querying common sites used during development",
+  "version": "0.2.0",
+  "description": "Commands for querying common sites used during development and other dev utilities",
   "author": "tobimori",
   "license": "MIT"
 }
